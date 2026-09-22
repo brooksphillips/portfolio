@@ -1,0 +1,356 @@
+/* =========================================================
+   Brooks Phillips — Financial Modeling Portfolio
+   Design language: the classic deal "tombstone" — hairline
+   rules, serif titling, restrained navy/ivory/brass palette.
+   ========================================================= */
+
+:root {
+  --navy: #0a1f3c;
+  --navy-light: #13294b;
+  --bg: #f6f4ee;
+  --card: #ffffff;
+  --gold: #a9812e;
+  --gold-dim: #c9ab6b;
+  --ink: #17191c;
+  --muted: #5b6472;
+  --border: #e1ddd0;
+  --green: #3f6b4f;
+  --green-bg: #eaf1ec;
+  --amber: #96631a;
+  --amber-bg: #f7efe0;
+  --slate: #6b7280;
+  --slate-bg: #eceae3;
+
+  --serif: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --max-width: 980px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ---------- Header ---------- */
+
+header.masthead {
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+}
+
+.masthead-inner {
+  padding: 56px 28px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 28px;
+}
+
+.identity h1 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(2.1rem, 4vw, 2.9rem);
+  margin: 0 0 6px;
+  color: var(--navy);
+  letter-spacing: 0.01em;
+}
+
+.identity .role {
+  font-size: 1.02rem;
+  color: var(--muted);
+  margin: 0;
+  max-width: 46ch;
+}
+
+.identity .rule {
+  width: 46px;
+  height: 2px;
+  background: var(--gold);
+  margin: 16px 0 14px;
+  border: none;
+}
+
+.masthead-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.btn-resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--navy);
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 13px 22px;
+  border: 1px solid var(--navy);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.btn-resume:hover {
+  background: var(--card);
+  color: var(--navy);
+}
+
+.btn-resume svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.contact-email {
+  font-size: 0.95rem;
+  color: var(--navy-light);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+}
+
+.contact-email:hover {
+  border-bottom-color: var(--gold);
+}
+
+/* ---------- Section headings ---------- */
+
+.section {
+  padding: 56px 0 8px;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+}
+
+.section-head h2 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--navy);
+}
+
+.section-head .count {
+  font-size: 0.88rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ---------- Project grid ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  padding-bottom: 60px;
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 26px 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.card-kind {
+  font-size: 0.82rem;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.status {
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.status-complete {
+  color: var(--green);
+  background: var(--green-bg);
+  border-color: #cfe1d5;
+}
+
+.status-progress {
+  color: var(--amber);
+  background: var(--amber-bg);
+  border-color: #ecdcb9;
+}
+
+.status-soon {
+  color: var(--slate);
+  background: var(--slate-bg);
+  border-color: #ddd9cd;
+}
+
+.card h3 {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--ink);
+}
+
+.card p.summary {
+  color: var(--muted);
+  font-size: 0.96rem;
+  margin: 0;
+  line-height: 1.55;
+}
+
+.card-foot {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold-dim);
+  padding-bottom: 1px;
+}
+
+.download-link:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+.download-link svg {
+  width: 13px;
+  height: 13px;
+}
+
+.filetype {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.pending-note {
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+
+.footer-inner {
+  padding: 40px 28px 48px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-name {
+  font-family: var(--serif);
+  color: var(--navy);
+  font-size: 1.05rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  color: var(--navy-light);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+}
+
+.footer-links a:hover {
+  border-bottom-color: var(--gold);
+}
+
+.footer-note {
+  width: 100%;
+  font-size: 0.8rem;
+  color: var(--slate);
+  padding-top: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
