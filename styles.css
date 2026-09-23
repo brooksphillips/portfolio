@@ -264,6 +264,33 @@ header.masthead {
   gap: 10px;
 }
 
+/* Downloads: one row per file pair (model + write-up). Cards with more
+   than one deliverable (e.g. BMS) stack multiple labeled rows. */
+.card-downloads {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.download-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.download-row-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-width: 78px;
+}
+
 .download-link {
   display: inline-flex;
   align-items: center;
@@ -284,16 +311,41 @@ header.masthead {
 .download-link svg {
   width: 13px;
   height: 13px;
+  flex-shrink: 0;
 }
 
 .filetype {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--muted);
+  font-weight: 400;
+  margin-left: 2px;
 }
 
 .pending-note {
   font-size: 0.88rem;
   color: var(--muted);
+  font-style: italic;
+}
+
+/* ---------- Placeholder card ("always building more") ---------- */
+
+.card-placeholder {
+  border-style: dashed;
+  border-color: var(--gold-dim);
+  background: transparent;
+  justify-content: center;
+}
+
+.card-placeholder .card-kind {
+  color: var(--muted);
+}
+
+.card-placeholder h3 {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.card-placeholder .summary {
   font-style: italic;
 }
 
